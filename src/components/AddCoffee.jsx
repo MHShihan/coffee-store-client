@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import Navbar from "./Navbar";
 const AddCoffee = () => {
   const handleAddCoffee = (event) => {
     event.preventDefault();
@@ -12,8 +13,6 @@ const AddCoffee = () => {
     const details = form.details.value;
     const photo = form.photo.value;
 
-    // https://ibb.co/zQ4xQBM
-
     const newCoffee = {
       name,
       quantity,
@@ -25,7 +24,7 @@ const AddCoffee = () => {
     };
     console.log(newCoffee);
 
-    fetch("http://localhost:5000/coffee", {
+    fetch("https://coffee-store-server-two-theta.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,6 +50,7 @@ const AddCoffee = () => {
 
   return (
     <div>
+      <Navbar></Navbar>
       <h1 className="text-5xl font-extrabold my-10 text-center">Add Coffee</h1>
       <form onSubmit={handleAddCoffee} className="flex justify-center">
         <div className="bg-[#F4F3F0] w-3/4 rounded-xl p-10">

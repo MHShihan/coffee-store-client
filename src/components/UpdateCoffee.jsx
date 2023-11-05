@@ -29,7 +29,7 @@ const UpdateCoffee = () => {
     };
     console.log(newUpdatedCoffee);
 
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://coffee-store-server-two-theta.vercel.app/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
